@@ -426,9 +426,9 @@ function zerif_about_us_header_subtitle_function() {
 
 function zerif_sidebar_function() {
 	?>
-	<!--div class="sidebar-wrap col-md-3 content-left-wrap">
+	<div class="sidebar-wrap col-md-3 content-left-wrap">
 		<?php get_sidebar(); ?>
-	</div--><!-- .sidebar-wrap -->
+	</div><!-- .sidebar-wrap -->
 	<?php
 }
 
@@ -438,7 +438,5 @@ function zerif_primary_navigation_function() {
 		<a class="screen-reader-text skip-link" href="#content"><?php _e( 'Skip to content', 'zerif-lite' ); ?></a>
 		<?php wp_nav_menu( array('theme_location' => 'primary', 'container' => false, 'menu_class' => 'nav navbar-nav navbar-right responsive-nav main-nav-list', 'fallback_cb' => 'zerif_wp_page_menu')); ?>
 	</nav>
-	
-	
 	<?php
 }

@@ -1411,11 +1411,9 @@ object {
 }
 #parallax_move .layer {
     background-size: cover;
-/*     margin: center; */
     width: 100%;
-    max-width:2560px;
     height: 100%;
-    background-position: center center;
+    background-position: top center;
 }
 
 .home-header-wrap {
@@ -1434,11 +1432,11 @@ object {
 	box-shadow: 0px 5px 11px 0px rgba(50, 50, 50, 0.08);
 }
 .header-content-wrap {
-	background: rgba(0, 0, 0, 0.1);
+	background: rgba(0, 0, 0, 0.5);
 	position: relative;
 	-webkit-box-shadow: 0px 5px 11px 0px rgba(50, 50, 50, 0.08);
 	box-shadow: 0px 5px 11px 0px rgba(50, 50, 50, 0.08);
-	padding: 180px 0 100px;
+	padding: 285px 0 210px;
 }
 .header_title {
     float: left;
@@ -1699,7 +1697,7 @@ ul.nav > li.current_page_item.current > a:before {
 	color: #FFF;
 	line-height: 65px;
 	z-index: 0;
-/* 	text-transform: uppercase; */
+	text-transform: uppercase;
 	font-size: 55px;
 	float:none;
 }

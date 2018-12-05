@@ -62,9 +62,9 @@
 			elseif( $footer_sections == 3 ):
 				$footer_class = 'col-md-4';
 			elseif( $footer_sections == 4 ):
-				$footer_class = 'col-md-4';
+				$footer_class = 'col-md-3';
 			else:
-				$footer_class = 'col-md-4';
+				$footer_class = 'col-md-3';
 			endif;
 
 			if( !empty($footer_class) ) {
@@ -132,7 +132,51 @@
 			// open link in a new tab when checkbox "accessibility" is not ticked
 			$attribut_new_tab = (isset($zerif_accessibility) && ($zerif_accessibility != 1) ? ' target="_blank"' : '' );
 
+			if( !empty($zerif_socials_facebook) || !empty($zerif_socials_twitter) || !empty($zerif_socials_linkedin) || !empty($zerif_socials_behance) || !empty($zerif_socials_dribbble) ||
+			!empty($zerif_copyright) || !empty($zerif_socials_instagram) ):
 
+						echo '<div class="'.$footer_class.' copyright">';
+						if(!empty($zerif_socials_facebook) || !empty($zerif_socials_twitter) || !empty($zerif_socials_linkedin) || !empty($zerif_socials_behance) || !empty($zerif_socials_dribbble)):
+							echo '<ul class="social">';
+
+							/* facebook */
+							if( !empty($zerif_socials_facebook) ):
+								echo '<li><a'.$attribut_new_tab.' href="'.esc_url($zerif_socials_facebook).'"><span class="sr-only">' . __( 'Go to Facebook', 'zerif-lite' ) . '</span> <i class="fa fa-facebook"></i></a></li>';
+							endif;
+							/* twitter */
+							if( !empty($zerif_socials_twitter) ):
+								echo '<li><a'.$attribut_new_tab.' href="'.esc_url($zerif_socials_twitter).'"><span class="sr-only">' . __( 'Go to Twitter', 'zerif-lite' ) . '</span> <i class="fa fa-twitter"></i></a></li>';
+							endif;
+							/* linkedin */
+							if( !empty($zerif_socials_linkedin) ):
+								echo '<li><a'.$attribut_new_tab.' href="'.esc_url($zerif_socials_linkedin).'"><span class="sr-only">' . __( 'Go to Linkedin', 'zerif-lite' ) . '</span> <i class="fa fa-linkedin"></i></a></li>';
+							endif;
+							/* behance */
+							if( !empty($zerif_socials_behance) ):
+								echo '<li><a'.$attribut_new_tab.' href="'.esc_url($zerif_socials_behance).'"><span class="sr-only">' . __( 'Go to Behance', 'zerif-lite' ) . '</span> <i class="fa fa-behance"></i></a></li>';
+							endif;
+							/* dribbble */
+							if( !empty($zerif_socials_dribbble) ):
+								echo '<li><a'.$attribut_new_tab.' href="'.esc_url($zerif_socials_dribbble).'"><span class="sr-only">' . __( 'Go to Dribble', 'zerif-lite' ) . '</span> <i class="fa fa-dribbble"></i></a></li>';
+							endif;
+							/* instagram */
+							if( !empty($zerif_socials_instagram) ):
+								echo '<li><a'.$attribut_new_tab.' href="'.esc_url($zerif_socials_instagram).'"><span class="sr-only">' . __( 'Go to Instagram', 'zerif-lite' ) . '</span> <i class="fa fa-instagram"></i></a></li>';
+							endif;
+							echo '</ul>';
+						endif;
+
+						if( !empty($zerif_copyright) ):
+							echo '<p id="zerif-copyright">'.wp_kses_post($zerif_copyright).'</p>';
+						elseif( is_customize_preview() ):
+							echo '<p id="zerif-copyright" class="zerif_hidden_if_not_customizer"></p>';
+						endif;
+
+						echo '<div class="zerif-copyright-box"><a class="zerif-copyright" href="http://themeisle.com/themes/zerif-lite/"'.$attribut_new_tab.' rel="nofollow">Zerif Lite </a>'.__('powered by','zerif-lite').'<a class="zerif-copyright" href="http://wordpress.org/"'.$attribut_new_tab.' rel="nofollow"> WordPress</a></div>';
+
+						echo '</div>';
+
+			endif;
 		?>
 		<?php zerif_bottom_footer_trigger(); ?>
 	</div> <!-- / END CONTAINER -->
